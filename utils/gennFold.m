@@ -67,7 +67,7 @@ elseif ( nFold==0 ) foldIdxs =  ones(size(Y)); return;              % no folding
 elseif ( isequal(nFold,'loo') || isequal(nFold,'lno') || isequal(opts.foldSize,1) ) % Leave-one-out / leave-n-out
   szY=size(Y); 
   N = prod(szY(setdiff(1:end,dim)));
-  nFold = str2num(nFold(4:end)); if ( isempty(nFold) ) nFold=10; end;
+  nFold = str2double(nFold(4:end)); if ( isempty(nFold) ) nFold=10; end;
   foldSize=opts.foldSize; if ( isempty(foldSize) && ~isempty(nFold)  ) foldSize=N/nFold; end;
   fIdxs=ceil(linspace(0,N,ceil(abs(N/foldSize))+1)); % equal-sized bins closest to foldSize
   foldIdxs=-ones([N,numel(fIdxs)-1]);
