@@ -68,7 +68,7 @@ if ( isfield(ft,'dimord') )  %use to re-arrange [ ch x freq x win x epoch]
       names=names(perm);
    end
 elseif ( ndims(X)<=3 )
-   names = {'ch' 'time' 'epoch'}
+   names = {'ch' 'time' 'epoch'};
 else
    error('Dont understand the input format');
 end
