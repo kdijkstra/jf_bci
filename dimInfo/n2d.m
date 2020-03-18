@@ -19,9 +19,9 @@ if ( ischar(nm) ) nm={nm}; end;
 if ( ischar(di) ) di={di}; end;
 if ( iscell(di) && ischar(di{1}) ) strs=di; 
 elseif ( isstruct(di) && isfield(di,'name') ) 
-  if ( isfield(di,'vals') && numel(di(end).vals)==1 && isempty(di(end).info) ) % ignore last entry if it's just the name/units of the elements 
-    di=di(1:end-1); 
-  end;
+ % if ( isfield(di,'vals') && numel(di(end).vals)==1 && isempty(di(end).info) ) % ignore last entry if it's just the name/units of the elements 
+ %   di=di(1:end-1); 
+ % end;
   strs={di.name}; 
 else 
    strs={};
