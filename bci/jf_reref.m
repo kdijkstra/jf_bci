@@ -42,7 +42,7 @@ end
 if( ~isempty(subsrefOpts.idx) ) % don't use index if it's not needed
    if(( islogical(subsrefOpts.idx) && all(subsrefOpts.idx) ) || ...
       ( isnumeric(subsrefOpts.idx) && isequal(subsrefOpts.idx,1:size(z.X,dim))) ) 
-      subsrefOpts=[]; 
+      subsrefOpts.idx=[]; 
    end
 end
 
