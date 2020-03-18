@@ -41,7 +41,7 @@ for spi=1:nSp;
    % check for sign inversion
    dir=fi'*Ytrn; if( dir<0 ) alphai=-alphai; end; 
    % optimise b
-   bi = optBias(Ytrn,fi);
+   bi = optbias(Ytrn,fi);
    % extract the solution information
    alphab([incIdx;true],spi)=[alphai;bi]; f(incIdx,spi)=fi; % taking account of excluded points
    W=tprod(X,[1:dim-1 -dim dim+1:ndims(X)],alphab(1:end-1,spi),-dim);
